@@ -1,0 +1,18 @@
+[package]
+name = "clipboard-listener"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+arboard = { version = "3", optional = true }
+tokio = { version = "1", features = ["full"] }
+sha2 = "0.10"
+hex = "0.4"
+md-5 = "0.10.5"
+anyhow = "1"
+
+[features]
+default = ["arboard"]
+image-data = ["arboard", "arboard/image-data"]
